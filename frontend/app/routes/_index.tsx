@@ -45,10 +45,10 @@ export default function Index() {
               </div>
               <div className="flex flex-wrap justify-center gap-4 pt-4">
                 <Button asChild size="lg">
-                  <Link to="/signup">Get Started</Link>
+                  <Link to="../signup">Get Started</Link>
                 </Button>
                 <Button variant="outline" asChild size="lg">
-                  <Link to="/learn-more">Learn More</Link>
+                  <Link to="../learn-more">Learn More</Link>
                 </Button>
               </div>
             </div>

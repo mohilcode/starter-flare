@@ -149,7 +149,7 @@ export default function Login() {
                 <FormItem>
                   <div className="flex items-center justify-between">
                     <FormLabel>Password</FormLabel>
-                    <Link to="/forgot-password" className="text-sm text-primary hover:underline">
+                    <Link to="../forgot-password" className="text-sm text-primary hover:underline">
                       Forgot password?
                     </Link>
                   </div>
@@ -222,7 +222,7 @@ export default function Login() {
       <CardFooter className="flex justify-center">
         <div className="text-sm text-muted-foreground">
           Don't have an account?
-          <Link to="/signup" className="text-primary hover:underline">
+          <Link to="../signup" className="text-primary hover:underline">
             Sign up
           </Link>
         </div>

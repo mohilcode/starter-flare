@@ -4,8 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
+    "build": "pnpm format && remix vite:build",
     "deploy": "pnpm run build && wrangler pages deploy",
+    "format": "cd .. && pnpm run format && cd -",
     "dev": "remix vite:dev",
     "types:cf": "wrangler types ./env.d.ts --env-interface CloudflareBindings",
     "typecheck": "tsc"
@@ -38,6 +39,8 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250214.0",
     "@remix-run/dev": "^2.15.3",
+    "@remix-run/fs-routes": "^2.16.0",
+    "@remix-run/route-config": "^2.16.0",
     "@tailwindcss/postcss": "^4.0.6",
     "@tailwindcss/vite": "^4.0.6",
     "@types/react": "^18.2.20",

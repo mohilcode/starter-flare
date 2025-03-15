@@ -1,4 +1,5 @@
 import type { LoaderFunction } from '@remix-run/cloudflare'
+import { data } from '@remix-run/cloudflare'
 import { useLoaderData } from '@remix-run/react'
 import { Link } from '@remix-run/react'
 import { useEffect, useState } from 'react'
@@ -12,15 +13,18 @@ interface LoaderData {
   message?: string
 }
 
-export const loader: LoaderFunction = async ({ request }): Promise<Response> => {
+export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url)
   const token = url.searchParams.get('token')
 
   if (!token) {
-    return Response.json({
-      status: 'error',
-      message: 'Verification token is missing. Please check your email link.',
-    })
+    return data(
+      {
+        status: 'error',
+        message: 'Verification token is missing. Please check your email link.',
+      },
+      { status: 400 }
+    )
   }
 
   try {
@@ -29,15 +33,18 @@ export const loader: LoaderFunction = async ({ request }): Promise<Response> => 
     })
 
     if (error) {
-      return Response.json({
-        status: 'error',
-        message: error.message || 'Failed to verify email. The link may be expired or invalid.',
-      })
+      return data(
+        {
+          status: 'error',
+          message: error.message || 'Failed to verify email. The link may be expired or invalid.',
+        },
+        { status: 400 }
+      )
     }
 
-    return Response.json({
+    return {
       status: 'success',
-    })
+    }
   } catch (error) {
     return handleServerError(
       error,
@@ -144,7 +151,7 @@ export default function VerifyEmail() {
                   </svg>
                 </div>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/">Return to Home</Link>
+                  <Link to="../">Return to Home</Link>
                 </Button>
               </div>
             )}

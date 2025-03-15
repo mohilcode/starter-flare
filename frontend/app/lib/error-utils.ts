@@ -1,3 +1,4 @@
+import { data } from '@remix-run/cloudflare'
 import { isRouteErrorResponse } from '@remix-run/react'
 import { isDevelopment } from '~/constants/env'
 
@@ -20,11 +21,11 @@ export function handleServerError(
 ) {
   logError(error, context)
 
-  return new Response(
-    JSON.stringify({
+  return data(
+    {
       status: 'error',
       message: userMessage,
-    }),
+    },
     {
       status: 500,
       headers: {

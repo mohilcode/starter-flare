@@ -1,11 +1,11 @@
-import { ModeToggle } from '@/components/mode-toggle'
 import { Link } from '@remix-run/react'
+import { ModeToggle } from '~/components/mode-toggle'
 
 const Header = () => {
   return (
     <header className="w-full border-b">
       <div className="container mx-auto max-w-7xl flex h-16 items-center justify-between px-4 md:px-6">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="../" className="flex items-center gap-2">
           <span className="text-xl font-bold">Brand</span>
         </Link>
         <div className="flex items-center gap-4">

@@ -124,7 +124,7 @@ export default function VerifyEmail() {
       </CardContent>
       <CardFooter className="flex justify-center">
         <div className="text-sm text-muted-foreground">
-          <Link to="/login" className="text-primary hover:underline">
+          <Link to="../login" className="text-primary hover:underline">
             Return to Login
           </Link>
         </div>

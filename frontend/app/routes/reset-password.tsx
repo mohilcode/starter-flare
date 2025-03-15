@@ -108,7 +108,7 @@ export default function ResetPasswordPage() {
                 <p>{tokenError}</p>
                 <div className="mt-4">
                   <Button asChild className="w-full">
-                    <Link to="/forgot-password">Request New Reset Link</Link>
+                    <Link to="../forgot-password">Request New Reset Link</Link>
                   </Button>
                 </div>
               </div>
@@ -209,7 +209,7 @@ export default function ResetPasswordPage() {
           <CardFooter className="flex justify-center">
             <div className="text-sm text-muted-foreground">
               Remember your password?
-              <Link to="/login" className="text-primary hover:underline">
+              <Link to="../login" className="text-primary hover:underline">
                 Back to login
               </Link>
             </div>

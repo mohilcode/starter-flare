@@ -16,7 +16,7 @@ export default function CatchAllRoute() {
         The page you're looking for doesn't exist or is still under development.
       </p>
       <Button asChild>
-        <Link to="/">Go Home</Link>
+        <Link to="../">Go Home</Link>
       </Button>
     </div>
   )

@@ -1,10 +1,10 @@
-import { ModeToggle } from '@/components/mode-toggle'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
-import { useSession } from '@/contexts/session-context'
-import { authClient } from '@/lib/auth'
 import { NavLink, useNavigate } from '@remix-run/react'
 import { Home, LogOut, Settings, User } from 'lucide-react'
+import { ModeToggle } from '~/components/mode-toggle'
+import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar'
+import { Button } from '~/components/ui/button'
+import { useSession } from '~/contexts/session-context'
+import { authClient } from '~/lib/auth'
 
 export function DashboardSidebar() {
   const { user, isLoading } = useSession()

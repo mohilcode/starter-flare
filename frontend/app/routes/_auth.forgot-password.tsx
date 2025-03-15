@@ -112,7 +112,7 @@ export default function ForgotPasswordPage() {
           <CardFooter className="flex justify-center">
             <div className="text-sm text-muted-foreground">
               Remember your password?
-              <Link to="/login" className="text-primary hover:underline">
+              <Link to="../login" className="text-primary hover:underline">
                 Back to login
               </Link>
             </div>

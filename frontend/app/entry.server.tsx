@@ -3,7 +3,7 @@ import { RemixServer } from '@remix-run/react'
 import { isbot } from 'isbot'
 import { renderToReadableStream } from 'react-dom/server'
 
-const ABORT_DELAY = 5000
+export const streamTimeout = 5000
 
 export default async function handleRequest(
   request: Request,
@@ -14,10 +14,10 @@ export default async function handleRequest(
 ) {
   let status = responseStatusCode
   const controller = new AbortController()
-  const timeoutId = setTimeout(() => controller.abort(), ABORT_DELAY)
+  const timeoutId = setTimeout(() => controller.abort(), streamTimeout)
 
   const body = await renderToReadableStream(
-    <RemixServer context={remixContext} url={request.url} abortDelay={ABORT_DELAY} />,
+    <RemixServer context={remixContext} url={request.url} />,
     {
       signal: controller.signal,
       onError(error: unknown) {
