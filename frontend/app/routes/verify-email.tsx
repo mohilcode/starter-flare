@@ -1,11 +1,11 @@
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { authClient } from '@/lib/auth'
-import { handleServerError } from '@/lib/error-utils'
 import type { LoaderFunction } from '@remix-run/cloudflare'
 import { useLoaderData } from '@remix-run/react'
 import { Link } from '@remix-run/react'
 import { useEffect, useState } from 'react'
+import { Button } from '~/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card'
+import { authClient } from '~/lib/auth'
+import { handleServerError } from '~/lib/error-utils'
 
 interface LoaderData {
   status: 'verifying' | 'success' | 'error'

@@ -1,0 +1,23 @@
+{
+  "name": "starter-flare",
+  "private": true,
+  "scripts": {
+    "lint": "biome lint .",
+    "format": "biome check --write .",
+    "frontend:dev": "cd frontend && pnpm run dev",
+    "backend:dev": "cd backend && pnpm run dev",
+    "db:studio:dev": "cd backend && pnpm run db:studio:local"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "biome check --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "lint-staged": "^15.4.3",
+    "simple-git-hooks": "^2.11.1"
+  },
+  "workspaces": ["frontend", "backend"]
+}

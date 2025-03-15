@@ -1,9 +1,9 @@
-import { DashboardSidebar } from '@/components/dashboard-sidebar'
-import { SessionProvider, useSession } from '@/contexts/session-context'
-import { logError } from '@/lib/error-utils'
 import type { LoaderFunction } from '@remix-run/cloudflare'
 import { Outlet, useNavigate } from '@remix-run/react'
 import { useEffect } from 'react'
+import { DashboardSidebar } from '~/components/dashboard-sidebar'
+import { SessionProvider, useSession } from '~/contexts/session-context'
+import { logError } from '~/lib/error-utils'
 
 export const loader: LoaderFunction = async ({ request }) => {
   return {

@@ -1,4 +1,3 @@
-import { cn } from '@/lib/utils'
 import type { LinksFunction, LoaderFunctionArgs } from '@remix-run/cloudflare'
 import {
   Links,
@@ -11,6 +10,7 @@ import {
   useRouteError,
 } from '@remix-run/react'
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes'
+import { cn } from '~/lib/utils'
 import { logError } from './lib/error-utils'
 import { createThemeSessionResolverWithSecret, getThemeSecret } from './lib/theme-utils.server'
 

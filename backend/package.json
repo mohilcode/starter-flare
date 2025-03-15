@@ -5,8 +5,6 @@
     "deploy:staging": "pnpm check && pnpm db:migrate:staging && NODE_ENV=staging wrangler deploy --env staging --minify",
     "deploy": "pnpm check && pnpm db:migrate && NODE_ENV=production wrangler deploy --minify",
     "types:cf": "wrangler types ./env.d.ts --env-interface CloudflareBindings",
-    "lint": "biome lint .",
-    "check": "biome check --write .",
     "db:schema": "drizzle-kit generate",
     "db:migrate:local": "wrangler d1 migrations apply db-flare --local",
     "db:migrate:staging": "wrangler d1 migrations apply db-flare-staging --env staging --remote",
@@ -14,12 +12,6 @@
     "db:studio:local": "drizzle-kit studio --config=drizzle.config.ts",
     "db:studio:staging": "TARGET=staging drizzle-kit studio --config=drizzle.config.ts",
     "db:studio": "TARGET=production drizzle-kit studio --config=drizzle.config.ts"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
-  },
-  "lint-staged": {
-    "*": ["biome check --write ."]
   },
   "dependencies": {
     "@hono/zod-validator": "^0.4.3",
@@ -29,14 +21,11 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
     "@cloudflare/workers-types": "^4.20250214.0",
     "@types/node": "^22.10.1",
     "better-sqlite3": "^11.6.0",
     "dotenv": "^16.4.5",
     "drizzle-kit": "^0.28.1",
-    "lint-staged": "^15.4.3",
-    "simple-git-hooks": "^2.11.1",
     "tsx": "^4.19.2",
     "wrangler": "^3.109.2"
   }

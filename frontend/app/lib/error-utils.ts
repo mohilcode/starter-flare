@@ -1,5 +1,5 @@
-import { isDevelopment } from '@/constants/env'
 import { isRouteErrorResponse } from '@remix-run/react'
+import { isDevelopment } from '~/constants/env'
 
 export function logError(error: unknown, context?: string): void {
   if (!isDevelopment) {

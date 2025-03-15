@@ -1,10 +1,10 @@
-import Features from '@/components/features'
-import Footer from '@/components/footer'
-import Header from '@/components/header'
-import { Button } from '@/components/ui/button'
-import { useRedirectIfAuthenticated } from '@/lib/auth'
 import type { MetaFunction } from '@remix-run/cloudflare'
 import { Link } from '@remix-run/react'
+import Features from '~/components/features'
+import Footer from '~/components/footer'
+import Header from '~/components/header'
+import { Button } from '~/components/ui/button'
+import { useRedirectIfAuthenticated } from '~/lib/auth'
 
 export const meta: MetaFunction = () => {
   return [

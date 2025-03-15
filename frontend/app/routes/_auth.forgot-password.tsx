@@ -1,4 +1,9 @@
-import { Button } from '@/components/ui/button'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Link } from '@remix-run/react'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { Button } from '~/components/ui/button'
 import {
   Card,
   CardContent,
@@ -6,7 +11,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+} from '~/components/ui/card'
 import {
   Form,
   FormControl,
@@ -14,15 +19,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Spinner } from '@/components/ui/spinner'
-import { authClient } from '@/lib/auth'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Link } from '@remix-run/react'
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
+} from '~/components/ui/form'
+import { Input } from '~/components/ui/input'
+import { Spinner } from '~/components/ui/spinner'
+import { authClient } from '~/lib/auth'
 
 const ForgotPasswordSchema = z.object({
   email: z.string().email('Please enter a valid email address'),

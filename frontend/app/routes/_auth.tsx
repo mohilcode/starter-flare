@@ -1,5 +1,5 @@
-import { useRedirectIfAuthenticated } from '@/lib/auth'
 import { Outlet } from '@remix-run/react'
+import { useRedirectIfAuthenticated } from '~/lib/auth'
 
 export default function AuthLayout() {
   const isChecking = useRedirectIfAuthenticated()

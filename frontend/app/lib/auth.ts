@@ -1,8 +1,8 @@
-import { logError } from '@/lib/error-utils'
 import { useNavigate } from '@remix-run/react'
 import { adminClient } from 'better-auth/client/plugins'
 import { createAuthClient } from 'better-auth/react'
 import { useEffect, useState } from 'react'
+import { logError } from '~/lib/error-utils'
 import { API_BASE_URL } from '../constants/env'
 
 export const authClient = createAuthClient({

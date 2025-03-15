@@ -1,4 +1,6 @@
-import { Button } from '@/components/ui/button'
+import { Link, useNavigate } from '@remix-run/react'
+import { useEffect, useState } from 'react'
+import { Button } from '~/components/ui/button'
 import {
   Card,
   CardContent,
@@ -6,11 +8,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
-import { Spinner } from '@/components/ui/spinner'
-import { authClient } from '@/lib/auth'
-import { Link, useNavigate, useSearchParams } from '@remix-run/react'
-import { useEffect, useState } from 'react'
+} from '~/components/ui/card'
+import { Spinner } from '~/components/ui/spinner'
+import { authClient } from '~/lib/auth'
 
 export default function VerifyEmail() {
   const [email, setEmail] = useState<string>('')

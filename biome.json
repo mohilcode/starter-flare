@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["node_modules", "dist", ".git", "build", ".wrangler", "coverage"]
+    "ignore": ["node_modules", "dist", ".git", "build", ".wrangler", "coverage", "env.d.ts"]
   },
   "formatter": {
     "enabled": true,
@@ -26,6 +26,7 @@
       "recommended": true,
       "correctness": {
         "noUnusedVariables": "error",
+        "noUnusedImports": "error",
         "noUndeclaredVariables": "error",
         "useExhaustiveDependencies": "error"
       },
@@ -50,16 +51,7 @@
     }
   },
   "javascript": {
-    "globals": [
-      "$",
-      "_",
-      "CloudflareBindings",
-      "D1Database",
-      "KVNamespace",
-      "R2Bucket",
-      "R2Object",
-      "R2ObjectBody"
-    ],
+    "globals": ["$", "_", "CloudflareBindings", "D1Database", "KVNamespace", "R2Bucket", "React"],
     "formatter": {
       "quoteStyle": "single",
       "trailingCommas": "es5",

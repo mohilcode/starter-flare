@@ -1,7 +1,7 @@
-import { authClient } from '@/lib/auth'
-import { logError } from '@/lib/error-utils'
-import type { User } from '@/lib/types'
 import { createContext, useCallback, useContext, useEffect, useState } from 'react'
+import { authClient } from '~/lib/auth'
+import { logError } from '~/lib/error-utils'
+import type { User } from '~/lib/types'
 
 type SessionContextType = {
   user: User | null

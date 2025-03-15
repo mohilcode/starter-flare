@@ -7,6 +7,7 @@ export const STAGING_API_URL = 'https://staging.mohil.dev'
 export const PROD_API_URL = 'https://mohil.dev'
 
 export const isStaging =
-  typeof window !== 'undefined' && window.location.hostname.includes('staging.mohil.dev')
+  typeof window !== 'undefined' &&
+  window.location.hostname.includes(new URL(STAGING_API_URL).hostname)
 
 export const API_BASE_URL = isDevelopment ? DEV_API_URL : isStaging ? STAGING_API_URL : PROD_API_URL
