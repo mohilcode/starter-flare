@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "lint-staged": "^15.4.3",
+    "lint-staged": "^15.5.0",
     "simple-git-hooks": "^2.11.1"
   },
   "workspaces": ["frontend", "backend"]
